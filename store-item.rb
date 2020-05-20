@@ -5,12 +5,12 @@ class Store
 
 
 
-  def initialize(color, price, brand, aisle_num, body_part)
-    @color = color,
-    @price = price,
-    @brand = brand, 
-    @aisle_num = aisle_num, 
-    @body_part = body_part
+  def initialize(product_details)
+    @color = product_details[:color],
+    @price = product_details[:price],
+    @brand = product_details[:brand], 
+    @aisle_num = product_details[:aisle_num]
+    @body_part = product_details[:body_part]
   end 
 
 
@@ -21,9 +21,9 @@ class Store
 end 
   
 
-eye_shadow = Store.new("Dessert Dreams", 65, "Huda", 1, "Eyes")
-blush = Store.new("Pink Peach Pop", 30, "Too Faced", 6, "Cheeks")
-moisturizer = Store.new("none", 15, "The Ordinary", 10, "Face")
+eye_shadow = Store.new(color: "Dessert Dreams", price: 65, brand: "Huda", aisle_num: 1, body_part: "Eyes")
+blush = Store.new(color: "Pink Peach Pop", price: 30, brand: "Too Faced", aisle_num: 6, body_part: "Cheeks")
+moisturizer = Store.new(color: "none", price: 15, brand: "The Ordinary", aisle_num: 10, body_part: "Face")
 
 p eye_shadow.price
 p eye_shadow.season_sale
