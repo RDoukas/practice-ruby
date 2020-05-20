@@ -1,34 +1,18 @@
 class Store 
 
-  def initialize(color, price, brand, store_section, body_part)
+  attr_reader :color, :price, :brand, :aisle_num, :body_part
+  attr_writer  :price, :aisle_num
+
+
+
+  def initialize(color, price, brand, aisle_num, body_part)
     @color = color,
     @price = price,
     @brand = brand, 
-    @store_section = store_section, 
+    @aisle_num = aisle_num, 
     @body_part = body_part
   end 
 
-
-
-  def color
-    @color
-  end 
-
-  def price
-    @price 
-  end 
-
-  def brand
-    @brand
-  end 
-
-  def store_section
-    @store_section
-  end 
-
-  def body_part 
-    @body_part
-  end 
 
   def season_sale
     @price = price - (price * 0.15)
@@ -37,9 +21,9 @@ class Store
 end 
   
 
-eye_shadow = Store.new("Dessert Dreams", 65, "Huda", "Makeup", "Eyes")
-blush = Store.new("Pink Peach Pop", 30, "Too Faced", "Makeup", "Cheeks")
-moisturizer = Store.new("none", 15, "The Ordinary", "Skincare", "Face")
+eye_shadow = Store.new("Dessert Dreams", 65, "Huda", 1, "Eyes")
+blush = Store.new("Pink Peach Pop", 30, "Too Faced", 6, "Cheeks")
+moisturizer = Store.new("none", 15, "The Ordinary", 10, "Face")
 
 p eye_shadow.price
 p eye_shadow.season_sale
